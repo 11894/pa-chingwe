@@ -46,16 +46,20 @@
   button{font-family:inherit;}
   :focus-visible{outline:2px solid var(--gold-soft); outline-offset:3px; border-radius:6px;}
 
-  .wrap{max-width:960px; margin:0 auto; padding: 28px 20px 80px;}
+  .wrap{max-width:920px; margin:0 auto; padding: 28px 20px 80px;}
 
   /* ---------- Header ---------- */
   header{
     display:flex; align-items:center; justify-content:space-between; gap:16px;
-    flex-wrap:wrap; margin-bottom: 16px;
+    flex-wrap:wrap; margin-bottom: 28px;
   }
   .brand{display:flex; align-items:center; gap:11px;}
-  .brand .peg{width:20px; height:26px; flex:none;}
-  .brand h1{font-family:'Fraunces', serif; font-weight:600; font-size:1.5rem; letter-spacing:0.01em; margin:0;}
+  .brand .peg{
+    width:20px; height:26px; flex:none;
+  }
+  .brand h1{
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.5rem; letter-spacing:0.01em; margin:0;
+  }
   .brand h1 em{ font-style:italic; color:var(--gold-soft); }
   .brand .tag{ font-size:0.72rem; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.12em; margin-top:2px;}
 
@@ -63,7 +67,7 @@
   .locbar form{display:flex; gap:8px;}
   .locbar input[type=text]{
     background:var(--surface); border:1px solid var(--line); color:var(--text);
-    padding:9px 12px; border-radius:10px; font-size:0.88rem; width:160px;
+    padding:9px 12px; border-radius:10px; font-size:0.88rem; width:170px;
   }
   .locbar input[type=text]::placeholder{color:var(--text-faint);}
   .btn{
@@ -75,27 +79,7 @@
   .btn:active{transform: translateY(1px);}
   .btn.primary{background:var(--gold); color:#241703; border-color:var(--gold); font-weight:600;}
   .btn.primary:hover{background:var(--gold-soft);}
-  .btn.small{padding:6px 10px; font-size:0.75rem;}
-  .btn[aria-pressed="true"]{border-color:var(--gold-soft); color:var(--gold-soft);}
-
-  .langtoggle{display:flex; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
-  .langtoggle button{
-    background:var(--surface); border:none; color:var(--text-dim); padding:8px 12px; font-size:0.78rem; cursor:pointer;
-  }
-  .langtoggle button.active{background:var(--gold); color:#241703; font-weight:600;}
-
-  .topbar-row{display:flex; justify-content:flex-end; margin-bottom:18px;}
-
-  /* ---------- banners ---------- */
-  .banner{
-    display:flex; align-items:center; gap:10px; padding:11px 14px; border-radius:10px;
-    font-size:0.82rem; margin-bottom:14px; border:1px solid var(--line);
-  }
-  .banner.offline{background:rgba(124,107,166,0.12); border-color:var(--dusk); color:#c9bfe6;}
-  .banner.countdown{background:rgba(232,163,61,0.10); border-color:var(--gold); color:var(--gold-soft);}
-  .banner .b-icon{width:16px; height:16px; flex:none;}
-  .banner .b-close{margin-left:auto; background:none; border:none; color:inherit; cursor:pointer; opacity:0.7; font-size:1rem; line-height:1;}
-  .banner .b-close:hover{opacity:1;}
+  .geo-note{font-size:0.78rem; color:var(--text-faint);}
 
   /* ---------- Clothesline hero ---------- */
   .hero{
@@ -117,7 +101,9 @@
   .place .sub{display:block; font-family:'Inter'; font-size:0.78rem; color:var(--text-dim); font-weight:400; margin-top:2px;}
   .updated{font-size:0.72rem; color:var(--text-faint); text-align:right; font-family:'IBM Plex Mono', monospace;}
 
-  .verdict{position:relative; display:flex; align-items:center; gap:22px; margin: 22px 0 12px; flex-wrap:wrap;}
+  .verdict{
+    position:relative; display:flex; align-items:center; gap:22px; margin: 22px 0 30px; flex-wrap:wrap;
+  }
   .score-ring{position:relative; width:104px; height:104px; flex:none;}
   .score-ring svg{transform:rotate(-90deg);}
   .score-ring .track{fill:none; stroke:var(--surface-raised); stroke-width:9;}
@@ -129,95 +115,140 @@
   .score-num b{font-size:1.7rem; line-height:1;}
   .score-num span{font-size:0.6rem; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.08em;}
 
-  .verdict-text h2{font-family:'Fraunces',serif; font-weight:600; font-size:1.5rem; margin:0 0 6px; max-width:480px;}
+  .verdict-text h2{
+    font-family:'Fraunces',serif; font-weight:600; font-size:1.5rem; margin:0 0 6px; max-width:480px;
+  }
   .verdict-text p{margin:0; color:var(--text-dim); font-size:0.92rem; max-width:480px;}
-  .best-time{font-size:0.78rem; color:var(--gold-soft); margin-top:8px; font-family:'IBM Plex Mono',monospace;}
 
   /* clothesline strip */
   .line-strip{ position:relative; padding: 6px 4px 2px; }
-  .line-track{ position:relative; height:120px; margin: 0 2px; }
+  .line-track{
+    position:relative; height:120px; margin: 0 2px;
+  }
   .rope{
     position:absolute; left:0; right:0; top:38px; height:2px;
     background: linear-gradient(90deg, transparent, var(--line) 4%, var(--line) 96%, transparent);
   }
-  .pegs{ position:relative; display:flex; height:100%; align-items:flex-start; }
-  .peg-slot{ flex:1; position:relative; display:flex; flex-direction:column; align-items:center; min-width: 30px; }
+  .pegs{
+    position:relative; display:flex; height:100%; align-items:flex-start;
+  }
+  .peg-slot{
+    flex:1; position:relative; display:flex; flex-direction:column; align-items:center;
+    min-width: 30px;
+  }
   .peg-icon{
     position:relative; top:26px; width:26px; height:26px; display:flex; align-items:center; justify-content:center;
-    background:var(--surface); border:2px solid var(--line); border-radius:50%; z-index:2;
+    background:var(--surface); border:2px solid var(--line); border-radius:50%;
+    z-index:2;
   }
   .peg-icon svg{width:15px; height:15px;}
   .peg-slot.now .peg-icon{ border-color:var(--gold-soft); box-shadow:0 0 0 4px rgba(232,163,61,0.15);}
   .peg-slot .drip{
-    position:absolute; top:52px; width:2px; height:34px; background:var(--line); left:50%; transform:translateX(-50%); z-index:1; opacity:0.6;
+    position:absolute; top:52px; width:2px; height:34px; background:var(--line); left:50%; transform:translateX(-50%); z-index:1;
+    opacity:0.6;
   }
   .peg-slot .cloth{
-    position:absolute; top:78px; width:20px; height:26px; border-radius:2px 2px 8px 8px; left:50%; transform:translateX(-50%); opacity:0.85;
+    position:absolute; top:78px; width:20px; height:26px; border-radius:2px 2px 8px 8px; left:50%; transform:translateX(-50%);
+    opacity:0.85;
   }
-  .peg-label{position:absolute; top:0; font-size:0.63rem; color:var(--text-faint); font-family:'IBM Plex Mono',monospace; white-space:nowrap;}
+  .peg-label{
+    position:absolute; top:0; font-size:0.63rem; color:var(--text-faint); font-family:'IBM Plex Mono',monospace;
+    white-space:nowrap;
+  }
   .peg-slot.taken .peg-icon, .peg-slot.taken .drip, .peg-slot.taken .cloth{ opacity:0.3; }
-  .legend{display:flex; gap:16px; flex-wrap:wrap; margin-top:14px; font-size:0.72rem; color:var(--text-faint);}
+  .legend{
+    display:flex; gap:16px; flex-wrap:wrap; margin-top:14px; font-size:0.72rem; color:var(--text-faint);
+  }
   .legend span{display:inline-flex; align-items:center; gap:5px;}
   .legend i{width:9px; height:9px; border-radius:50%; display:inline-block;}
 
-  /* ---------- Section titles ---------- */
+  /* ---------- Factor grid ---------- */
   .section-title{
     font-family:'Fraunces',serif; font-size:1.05rem; font-weight:600; margin: 34px 0 12px;
     display:flex; align-items:center; gap:10px;
   }
   .section-title .rule{flex:1; height:1px; background:var(--line);}
 
-  /* ---------- Factor grid ---------- */
-  .factors{display:grid; grid-template-columns: repeat(5, 1fr); gap:10px;}
+  .factors{
+    display:grid; grid-template-columns: repeat(5, 1fr); gap:10px;
+  }
   @media (max-width: 720px){ .factors{grid-template-columns: repeat(2, 1fr);} }
-  .factor-card{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 12px;}
+
+  /* ---------- Weekly planner ---------- */
+  .weekly{ display:grid; grid-template-columns: repeat(7, 1fr); gap:8px; }
+  @media (max-width: 720px){
+    .weekly{ grid-auto-flow:column; grid-auto-columns:minmax(80px,1fr); grid-template-columns:none; overflow-x:auto; padding-bottom:4px; }
+  }
+  .day-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:12px 6px; text-align:center;
+  }
+  .day-card.best{ border-color:var(--gold-soft); box-shadow:0 0 0 2px rgba(232,163,61,0.15); }
+  .day-name{ font-family:'IBM Plex Mono',monospace; font-size:0.66rem; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.05em; }
+  .day-stars{ margin:9px 0 4px; font-size:0.82rem; color:var(--gold-soft); letter-spacing:1px; }
+  .day-stars .dim{ color:var(--line); }
+  .day-label{ font-size:0.67rem; color:var(--text-dim); line-height:1.3; min-height:2.4em; }
+  .best-time{ margin:8px 0 0; font-size:0.8rem; color:var(--gold-soft); font-family:'IBM Plex Mono',monospace; }
+
+  /* ---------- Fabric drying times ---------- */
+  .fabrics{ display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; }
+  @media (max-width: 720px){ .fabrics{grid-template-columns: repeat(2, 1fr);} }
+  .fabrics-note{ margin:8px 2px 0; font-size:0.78rem; color:var(--text-dim); }
+
+  /* ---------- Weather-change warning banner ---------- */
+  .change-banner{
+    background:rgba(232,163,61,0.10); border:1px solid var(--gold-soft); border-radius:12px;
+    padding:12px 14px; margin-bottom:16px;
+  }
+  .change-banner .cb-head{
+    display:flex; justify-content:space-between; align-items:center; font-size:0.85rem; margin-bottom:6px;
+  }
+  .change-banner .cb-close{
+    background:none; border:none; color:var(--text-dim); cursor:pointer; font-size:0.95rem; line-height:1; padding:2px 4px;
+  }
+  .change-item{ display:flex; gap:8px; font-size:0.82rem; color:var(--text-dim); padding:6px 0; }
+  .change-item + .change-item{ border-top:1px solid var(--line); }
+  .change-item b{ color:var(--text); display:block; font-size:0.83rem; margin-bottom:2px; }
+  .change-item p{ margin:0; }
+  #notifyBtn.active{ border-color:var(--gold-soft); color:var(--gold-soft); }
+
+  /* ---------- Chat assistant ---------- */
+  .chatbox{
+    background:var(--surface); border:1px solid var(--line); border-radius:14px;
+    padding:14px; display:flex; flex-direction:column; gap:10px;
+  }
+  .chat-log{ max-height:340px; overflow-y:auto; display:flex; flex-direction:column; gap:8px; padding-right:2px; }
+  .chat-msg{ max-width:88%; padding:9px 12px; border-radius:12px; font-size:0.88rem; line-height:1.45; white-space:pre-line; }
+  .chat-msg.bot{ background:var(--surface-raised); border:1px solid var(--line); align-self:flex-start; color:var(--text); }
+  .chat-msg.user{ background:var(--gold); color:#241703; align-self:flex-end; font-weight:500; }
+  .chat-msg.thinking{ color:var(--text-faint); font-style:italic; }
+  .chat-suggestions{ display:flex; flex-wrap:wrap; gap:6px; }
+  .chip{
+    background:var(--surface-raised); border:1px solid var(--line); color:var(--text-dim);
+    font-size:0.76rem; padding:6px 10px; border-radius:999px; cursor:pointer; font-family:inherit;
+  }
+  .chip:hover{ border-color:var(--gold-soft); color:var(--gold-soft); }
+  .chat-input-row{ display:flex; gap:8px; }
+  .chat-key-row{ display:flex; gap:8px; margin-bottom:2px; }
+  .chat-key-row input{
+    flex:1; background:var(--surface-raised); border:1px solid var(--line); color:var(--text);
+    border-radius:8px; padding:8px 10px; font-size:0.82rem; font-family:'IBM Plex Mono', monospace;
+  }
+  .chat-key-row input::placeholder{ color:var(--text-faint); font-family:'Inter'; }
+  .chat-key-row .btn.saved{ border-color:var(--good); color:var(--good); }
+  .chat-input-row input{
+    flex:1; background:var(--surface-raised); border:1px solid var(--line); color:var(--text);
+    border-radius:10px; padding:10px 12px; font-family:inherit; font-size:0.88rem;
+  }
+  .chat-input-row input::placeholder{ color:var(--text-faint); }
+  .chat-hint{ margin:0; font-size:0.72rem; color:var(--text-faint); }
+  .factor-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 12px;
+  }
   .factor-card .ficon{width:20px; height:20px; margin-bottom:8px; color:var(--gold-soft);}
   .factor-card .fval{font-family:'IBM Plex Mono',monospace; font-size:1.25rem; font-weight:500;}
   .factor-card .flabel{font-size:0.7rem; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.06em; margin-top:2px;}
   .factor-card .fnote{font-size:0.75rem; color:var(--text-dim); margin-top:8px; line-height:1.35;}
-
-  /* ---------- Risk meters ---------- */
-  .risk-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px 22px;}
-  @media (max-width:560px){ .risk-grid{grid-template-columns:1fr;} }
-  .risk-row{display:flex; flex-direction:column; gap:5px;}
-  .risk-row .r-top{display:flex; justify-content:space-between; font-size:0.8rem;}
-  .risk-row .r-top b{font-weight:500; color:var(--text-dim);}
-  .risk-row .r-top span{font-family:'IBM Plex Mono',monospace; color:var(--text);}
-  .risk-track{height:8px; border-radius:6px; background:var(--surface-raised); overflow:hidden;}
-  .risk-fill{height:100%; border-radius:6px; transition:width .6s ease;}
-
-  /* ---------- Fabric picker ---------- */
-  .fabric-pills{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px;}
-  .fabric-pill{
-    background:var(--surface); border:1px solid var(--line); color:var(--text-dim); padding:8px 14px;
-    border-radius:999px; font-size:0.8rem; cursor:pointer; transition:.15s ease;
-  }
-  .fabric-pill.active{background:var(--gold); border-color:var(--gold); color:#241703; font-weight:600;}
-  .fabric-result{
-    display:flex; align-items:center; gap:18px; background:var(--surface); border:1px solid var(--line);
-    border-radius:12px; padding:18px 20px; flex-wrap:wrap;
-  }
-  .fabric-result .f-time{font-family:'IBM Plex Mono',monospace; font-size:1.9rem; color:var(--gold-soft); line-height:1;}
-  .fabric-result .f-time-label{font-size:0.68rem; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.08em; margin-top:4px;}
-  .fabric-result .f-detail{flex:1; min-width:180px;}
-  .fabric-result .f-detail p{margin:0; font-size:0.83rem; color:var(--text-dim);}
-  .fabric-note{font-size:0.75rem; color:var(--text-faint); margin-top:10px;}
-
-  /* ---------- Week planner ---------- */
-  .week-scroll{display:flex; gap:10px; overflow-x:auto; padding-bottom:6px; -webkit-overflow-scrolling:touch;}
-  .day-card{
-    flex:none; width:118px; background:var(--surface); border:1px solid var(--line); border-radius:12px;
-    padding:14px 10px; text-align:center; position:relative;
-  }
-  .day-card.best{border-color:var(--gold-soft);}
-  .day-card .d-badge{
-    position:absolute; top:-9px; left:50%; transform:translateX(-50%); background:var(--gold); color:#241703;
-    font-size:0.6rem; font-weight:700; padding:2px 8px; border-radius:999px; white-space:nowrap;
-  }
-  .day-card .d-name{font-family:'Fraunces',serif; font-weight:600; font-size:0.92rem;}
-  .day-card .d-date{font-size:0.66rem; color:var(--text-faint); margin-bottom:8px;}
-  .day-card .d-stars{font-size:0.95rem; letter-spacing:1px; color:var(--gold-soft); margin-bottom:4px;}
-  .day-card .d-label{font-size:0.68rem; color:var(--text-dim);}
 
   /* ---------- Alerts ---------- */
   .alerts{display:flex; flex-direction:column; gap:10px;}
@@ -243,10 +274,6 @@
   .warm-card b{display:block; font-size:0.95rem; margin-bottom:3px;}
   .warm-card p{margin:0; font-size:0.83rem; color:var(--text-dim);}
 
-  /* ---------- Reminders ---------- */
-  .reminders-row{display:flex; align-items:center; gap:12px; flex-wrap:wrap; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 18px; margin-top:10px;}
-  .reminders-row p{margin:0; font-size:0.82rem; color:var(--text-dim); flex:1; min-width:200px;}
-
   footer{
     margin-top:44px; padding-top:18px; border-top:1px solid var(--line);
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
@@ -254,14 +281,19 @@
   }
   footer a{text-decoration:underline; text-underline-offset:2px;}
 
+  .skeleton{ opacity:0.5; }
   .error-box{
     background:rgba(193,85,59,0.12); border:1px solid var(--ember); color:var(--ember-soft);
     padding:14px 16px; border-radius:10px; font-size:0.85rem; margin-bottom:18px;
   }
   .loading-line{
-    display:flex; align-items:center; gap:10px; color:var(--text-dim); font-size:0.85rem; padding:40px 0; justify-content:center;
+    display:flex; align-items:center; gap:10px; color:var(--text-dim); font-size:0.85rem; padding:40px 0;
+    justify-content:center;
   }
-  .spin{width:16px; height:16px; border-radius:50%; border:2px solid var(--line); border-top-color:var(--gold-soft); animation: spin 0.8s linear infinite;}
+  .spin{
+    width:16px; height:16px; border-radius:50%; border:2px solid var(--line); border-top-color:var(--gold-soft);
+    animation: spin 0.8s linear infinite;
+  }
   @keyframes spin{ to{ transform:rotate(360deg);} }
 </style>
 </head>
@@ -272,32 +304,32 @@
     <div class="brand">
       <svg class="peg" viewBox="0 0 20 26" fill="none"><path d="M6 2 L6 12 M14 2 L14 12" stroke="#e8a33d" stroke-width="2" stroke-linecap="round"/><rect x="3" y="11" width="14" height="13" rx="3" fill="#e8a33d"/><rect x="8.3" y="11" width="3.4" height="13" fill="#12151c"/></svg>
       <div>
-        <h1 id="brandTitle">On <em>The</em> Line</h1>
-        <div class="tag" id="brandTag">wash-day forecast</div>
+        <h1>On <em>The</em> Line</h1>
+        <div class="tag">wash-day forecast</div>
       </div>
     </div>
     <div class="locbar">
       <form id="searchForm">
         <input type="text" id="cityInput" placeholder="Search a town or city" autocomplete="off">
-        <button class="btn" type="submit" id="searchBtnText">Search</button>
+        <button class="btn" type="submit">Search</button>
       </form>
       <button class="btn primary" id="geoBtn" type="button">Use my location</button>
+      <button class="btn" id="notifyBtn" type="button" title="Checks for meaningful weather changes every ~10 minutes while this tab stays open">🔔 Enable alerts</button>
     </div>
   </header>
 
-  <div class="topbar-row">
-    <div class="langtoggle" role="group" aria-label="Language">
-      <button id="langEn" class="active" type="button">EN</button>
-      <button id="langNy" type="button">NY</button>
-    </div>
-  </div>
-
-  <div id="offlineBanner"></div>
-  <div id="countdownBanner"></div>
   <div id="errorBox"></div>
-  <div id="loading" class="loading-line"><span class="spin"></span> <span id="loadingText">Reading the sky…</span></div>
+  <div id="loading" class="loading-line"><span class="spin"></span> Reading the sky…</div>
 
   <main id="app" style="display:none;">
+
+    <div class="change-banner" id="changeBanner" style="display:none;" role="alert">
+      <div class="cb-head">
+        <b>⚠ Conditions have changed</b>
+        <button class="cb-close" id="cbClose" type="button" aria-label="Dismiss">✕</button>
+      </div>
+      <div id="changeList"></div>
+    </div>
 
     <section class="hero">
       <div class="hero-sky" id="heroSky"></div>
@@ -315,12 +347,12 @@
             <circle class="track" cx="52" cy="52" r="46"></circle>
             <circle class="fill" id="scoreArc" cx="52" cy="52" r="46"></circle>
           </svg>
-          <div class="score-num"><b id="scoreVal">–</b><span id="scoreLabel">dry score</span></div>
+          <div class="score-num"><b id="scoreVal">–</b><span>dry score</span></div>
         </div>
         <div class="verdict-text">
           <h2 id="verdictHeadline">Checking conditions…</h2>
           <p id="verdictBody">One moment while today's forecast comes in.</p>
-          <div class="best-time" id="bestTime"></div>
+          <p class="best-time" id="bestTimeNote"></p>
         </div>
       </div>
 
@@ -329,37 +361,55 @@
           <div class="rope"></div>
           <div class="pegs" id="pegs"></div>
         </div>
-        <div class="legend" id="legend"></div>
+        <div class="legend">
+          <span><i style="background:var(--good)"></i>Good drying</span>
+          <span><i style="background:var(--gold-soft)"></i>Strong sun / UV care</span>
+          <span><i style="background:var(--storm-soft)"></i>Slow drying</span>
+          <span><i style="background:var(--ember-soft)"></i>Rain</span>
+          <span><i style="background:var(--dusk)"></i>After dark / dew risk</span>
+        </div>
       </div>
     </section>
 
-    <div class="section-title"><span id="rightNowTitle">Right now on the line</span><span class="rule"></span></div>
+    <div class="section-title">This week <span class="rule"></span></div>
+    <div class="weekly" id="weekly"></div>
+
+    <div class="section-title">Right now on the line <span class="rule"></span></div>
     <div class="factors" id="factors"></div>
 
-    <div class="section-title"><span id="riskTitle">Risk meters</span><span class="rule"></span></div>
-    <div class="risk-grid" id="riskGrid"></div>
-
-    <div class="section-title"><span id="fabricTitle">How long will it take to dry?</span><span class="rule"></span></div>
-    <div class="fabric-pills" id="fabricPills"></div>
-    <div class="fabric-result" id="fabricResult"></div>
-    <div class="fabric-note" id="fabricNote"></div>
-
-    <div class="section-title"><span id="weekTitle">This week's washing days</span><span class="rule"></span></div>
-    <div class="week-scroll" id="weekScroll"></div>
-
-    <div class="section-title"><span id="warningsTitle">Today's warnings</span><span class="rule"></span></div>
+    <div class="section-title">Today's warnings <span class="rule"></span></div>
     <div class="alerts" id="alerts"></div>
 
-    <div class="section-title"><span id="wearTitle">What to wear</span><span class="rule"></span></div>
+    <div class="section-title">What to wear <span class="rule"></span></div>
     <div class="warm-card" id="warmCard"></div>
 
-    <div class="reminders-row">
-      <p id="remindersText">Turn on browser reminders and this page will notify you when rain or dusk is close, as long as the tab stays open.</p>
-      <button class="btn small" id="remindersBtn" type="button">Enable reminders</button>
+    <div class="section-title">Estimated drying time <span class="rule"></span></div>
+    <div class="fabrics" id="fabrics"></div>
+    <p class="fabrics-note" id="fabricsNote"></p>
+
+    <div class="section-title">Ask the assistant <span class="rule"></span></div>
+    <div class="chatbox" id="chatbox">
+      <div class="chat-key-row" id="chatKeyRow">
+        <input type="password" id="apiKeyInput" placeholder="Optional: paste your Claude API key for AI-written answers" autocomplete="off">
+        <button class="btn" id="apiKeySave" type="button">Save</button>
+      </div>
+      <div class="chat-log" id="chatLog">
+        <div class="chat-msg bot">Hi! Ask me things like "When will my towel dry?" or "Should I wash today?" — I'll check the live forecast for you.</div>
+      </div>
+      <div class="chat-suggestions" id="chatSuggestions">
+        <button type="button" class="chip">Can I wash today?</button>
+        <button type="button" class="chip">When will my t-shirt dry?</button>
+        <button type="button" class="chip">Best day to wash this week?</button>
+      </div>
+      <form id="chatForm" class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Ask about today's laundry weather…" autocomplete="off">
+        <button class="btn primary" type="submit">Ask</button>
+      </form>
+      <p class="chat-hint" id="chatHint">Without a key, answers come instantly from a built-in template using this page's live forecast. Add a key above for answers written by Claude instead — it's stored only in this browser tab and sent only to api.anthropic.com.</p>
     </div>
 
     <footer>
-      <span id="footerNote">Forecast by <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>, a free open-source weather API. No affiliation.</span>
+      <span>Forecast by <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>, a free open-source weather API. No affiliation.</span>
       <span id="tzNote"></span>
     </footer>
   </main>
@@ -371,27 +421,23 @@
 
   const DEFAULT_LOC = { lat:-13.9626, lon:33.7741, name:"Lilongwe", country:"Malawi" };
   const $ = (id) => document.getElementById(id);
-  const RING_C = 2 * Math.PI * 46;
-  const CACHE_KEY = 'onTheLine:lastForecast';
 
   const els = {
-    loading: $('loading'), loadingText: $('loadingText'), app: $('app'), errorBox: $('errorBox'),
+    loading: $('loading'), app: $('app'), errorBox: $('errorBox'),
     placeName: $('placeName'), placeSub: $('placeSub'), updatedAt: $('updatedAt'),
-    scoreArc: $('scoreArc'), scoreVal: $('scoreVal'), scoreLabel: $('scoreLabel'),
-    verdictHeadline: $('verdictHeadline'), verdictBody: $('verdictBody'), bestTime: $('bestTime'),
-    pegs: $('pegs'), legend: $('legend'), factors: $('factors'), riskGrid: $('riskGrid'),
-    fabricPills: $('fabricPills'), fabricResult: $('fabricResult'), fabricNote: $('fabricNote'),
-    weekScroll: $('weekScroll'), alerts: $('alerts'), warmCard: $('warmCard'),
+    scoreArc: $('scoreArc'), scoreVal: $('scoreVal'),
+    verdictHeadline: $('verdictHeadline'), verdictBody: $('verdictBody'),
+    pegs: $('pegs'), factors: $('factors'), alerts: $('alerts'), warmCard: $('warmCard'),
+    weekly: $('weekly'), fabrics: $('fabrics'), bestTimeNote: $('bestTimeNote'),
+    fabricsNote: $('fabricsNote'),
+    changeBanner: $('changeBanner'), changeList: $('changeList'), cbClose: $('cbClose'), notifyBtn: $('notifyBtn'),
+    chatLog: $('chatLog'), chatForm: $('chatForm'), chatInput: $('chatInput'), chatSuggestions: $('chatSuggestions'),
+    apiKeyInput: $('apiKeyInput'), apiKeySave: $('apiKeySave'), chatHint: $('chatHint'),
     heroSky: $('heroSky'), tzNote: $('tzNote'),
-    searchForm: $('searchForm'), cityInput: $('cityInput'), geoBtn: $('geoBtn'),
-    offlineBanner: $('offlineBanner'), countdownBanner: $('countdownBanner'),
-    remindersBtn: $('remindersBtn'), remindersText: $('remindersText'),
-    langEn: $('langEn'), langNy: $('langNy'),
-    brandTitle: $('brandTitle'), brandTag: $('brandTag'), searchBtnText: $('searchBtnText'),
-    rightNowTitle: $('rightNowTitle'), riskTitleEl: $('riskTitle'), fabricTitleEl: $('fabricTitle'),
-    weekTitleEl: $('weekTitle'), warningsTitleEl: $('warningsTitle'), wearTitleEl: $('wearTitle'),
-    footerNote: $('footerNote')
+    searchForm: $('searchForm'), cityInput: $('cityInput'), geoBtn: $('geoBtn')
   };
+
+  const RING_C = 2 * Math.PI * 46;
 
   // ---------- icons ----------
   const ICONS = {
@@ -407,8 +453,7 @@
     uv: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="4.5"/><path d="M12 3v2.5M4 13H2M22 13h-2M6 6.5 4.5 5M18 6.5 19.5 5"/><path d="M9 20h6"/></svg>',
     sweater: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4 3 7v3l2.5-1V20h13V9L21 10V7l-4-3-2.5 2h-5L7 4z"/></svg>',
     tee: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4 3 7l2 3 2-1v11h10V9l2 1 2-3-5-3-2 2h-2L8 4z"/></svg>',
-    bell: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>',
-    wifi: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5a17 17 0 0 1 20 0M5.5 12.5a12 12 0 0 1 13 0M9 16.5a6.5 6.5 0 0 1 6 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg>'
+    fabric: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9.3h16M9.3 4v16"/></svg>'
   };
 
   function iconForCode(code, isDay){
@@ -421,6 +466,7 @@
     if(code >= 95) return ICONS.storm;
     return ICONS.cloud;
   }
+
   function colorForCode(code, isDay, humidity, precipProb){
     if(!isDay) return 'var(--dusk)';
     if(precipProb >= 40 || (code>=51)) return 'var(--ember-soft)';
@@ -428,127 +474,25 @@
     return 'var(--storm-soft)';
   }
 
-  // ---------- translations ----------
-  const STR = {
-    en: {
-      brandTitle:'On <em>The</em> Line', brandTag:'wash-day forecast',
-      searchPlaceholder:'Search a town or city', searchBtn:'Search', geoBtn:'Use my location',
-      loading:'Reading the sky…', rightNowTitle:'Right now on the line', riskTitle:'Risk meters',
-      fabricTitle:"How long will it take to dry?", fabricNote:"Estimated for today's remaining conditions. Actual time varies with load size, shade and fabric thickness.",
-      weekTitle:"This week's washing days", warningsTitle:"Today's warnings", wearTitle:'What to wear',
-      dryScoreLabel:'dry score', updatedPrefix:'Updated', bestTimePrefix:'Best time to hang today:',
-      legendGood:'Good drying', legendSun:'Strong sun / UV care', legendSlow:'Slow drying', legendRain:'Rain', legendDark:'After dark / dew risk',
-      riskRain:'Rain risk', riskSun:'Sun damage', riskWind:'Wind benefit', riskHumidity:'Humidity risk',
-      fabricNames:{tshirt:'T-shirt / light cotton', shirt:'Shirt', jeans:'Jeans / denim', towel:'Towel', sheet:'Bedsheet', sweaterF:'Sweater / wool'},
-      dryByPrefix:'Should be dry by', pastSunsetNote:"This crosses sunset — bring it in and let it finish indoors, or hang it first thing tomorrow instead.",
-      enableReminders:'Enable reminders', remindersOn:'Reminders on', remindersDenied:'Notifications blocked — the countdown banner above will still update while this tab is open.',
-      remindersIntro:'Turn on browser reminders and this page will notify you when rain or dusk is close, as long as the tab stays open.',
-      offlinePrefix:"You're offline — showing the last saved forecast from",
-      footerNote:'Forecast by <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>, a free open-source weather API. No affiliation.',
-      starLabels:['Avoid','Poor','Fair','Good','Excellent'],
-      bestBadge:'Best day',
-      rainCountdown:(m)=>`Rain likely in ${m} — bring clothes in before then.`,
-      duskCountdown:(m)=>`Dusk in ${m} — take clothes in before dew sets in.`,
-      weekdays:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
-      today:'Today',
-      errorGeneric:'Something went wrong fetching the forecast.'
-    },
-    ny: {
-      brandTitle:'Pa <em>Chi</em>ngwe', brandTag:'kuneneratu za kuchapa',
-      searchPlaceholder:'Sakani tawuni kapena mzinda', searchBtn:'Sakani', geoBtn:'Gwiritsani malo anga',
-      loading:'Tikuyang’ana kumwamba…', rightNowTitle:'Pa nthawi ino pa chingwe', riskTitle:'Ziopsezo',
-      fabricTitle:'Zovala zidzauma pa nthawi yanji?', fabricNote:"Chiyerekezo cha nyengo yotsala lero. Nthawi yeniyeni imasintha malinga ndi kuchuluka kwa zovala, mthunzi, ndi ukhuthu wa nsalu.",
-      weekTitle:'Masiku abwino ochapira sabata ino', warningsTitle:'Machenjezo a lero', wearTitle:'Zovala zoyenera',
-      dryScoreLabel:'chiwerengero chouma', updatedPrefix:'Yasinthidwa', bestTimePrefix:'Nthawi yabwino yopachika lero:',
-      legendGood:'Kuuma bwino', legendSun:'Dzuwa lamphamvu / samalani zovala', legendSlow:'Kuuma pang’onopang’ono', legendRain:'Mvula', legendDark:'Usiku / chinyezi',
-      riskRain:'Chiopsezo cha mvula', riskSun:'Kuwonongeka ndi dzuwa', riskWind:'Phindu la mphepo', riskHumidity:'Chiopsezo cha chinyezi',
-      fabricNames:{tshirt:'Siketi / bafuta lopepuka', shirt:'Malaya', jeans:'Jini', towel:'Taulo', sheet:'Nsalu yogona', sweaterF:'Sweta'},
-      dryByPrefix:'Ziyenera kuuma pofika', pastSunsetNote:'Izi zikudutsa nthawi yolowa dzuwa — zibweretseni mkati kuti zimalize kuuma, kapena zipachikeni mmawa m’malo mwake.',
-      enableReminders:'Yatsani machenjezo', remindersOn:'Machenjezo ali pa', remindersDenied:'Machenjezo aletsedwa — chikalata pamwambapa chidzapitirizabe kusintha pamene tabu iyi ili yotseguka.',
-      remindersIntro:'Yatsani machenjezo a bulawuza kuti tsambali likuuzeni pamene mvula kapena usiku zayandikira, ngati tabu iyi ikupitiriza kukhala yotseguka.',
-      offlinePrefix:'Simuli pa intaneti — ikuwonetsa nyengo yomaliza yosungidwa kuyambira',
-      footerNote:'Nyengo ndi ya <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>, chida chaulere komanso chotseguka cha nyengo. Palibe mgwirizano. (Zomasulira za Chichewa ndi zoyandikira, mwina sizili zangwiro.)',
-      starLabels:['Pewani','Zoipa','Zabwinobwino','Zabwino','Zabwino kwambiri'],
-      bestBadge:'Tsiku labwino',
-      rainCountdown:(m)=>`Mvula ingagwe pafupifupi mu ${m} — bweretsani zovala mkati musanafike nthawi imeneyo.`,
-      duskCountdown:(m)=>`Usiku ufika mu ${m} — bweretsani zovala mkati chinyezi chisanagwe.`,
-      weekdays:['Lam','Lol','Lac2','Lac3','Lac4','Lac5','Low'],
-      today:'Lero',
-      errorGeneric:'Palibe zomwe zapezeka pakufufuza nyengo. Yesaninso.'
-    }
-  };
-
-  // dynamic phrase banks keyed by branch, per language
-  const VERDICTS = {
-    en: {
-      excellent:{h:"Hang it up — today's a great drying day.", b:"Sun, air and low humidity are all in your favour. Wash in the morning so clothes get the full drying window."},
-      good:{h:"Good enough to wash — expect a slower dry.", b:"Conditions are decent but not ideal. Hang clothes as early as possible and give them extra time, or space them out for better airflow."},
-      borderlineRain:{h:"Borderline — only wash if you can dry indoors as backup.", b:"Humidity or a chance of rain will slow things down today. Have an indoor line or rack ready."},
-      borderline:{h:"Borderline — only wash if you can dry indoors as backup.", b:"Weak sun and still air mean a full day may not be enough to dry heavier items."},
-      poorRain:{h:"Better to hold off washing today.", b:"Rain is likely to interrupt drying. Save the laundry for a clearer day if you can."},
-      poor:{h:"Better to hold off washing today.", b:"Heavy cloud, high humidity and little wind mean clothes are unlikely to dry properly today."}
-    },
-    ny: {
-      excellent:{h:'Pachikani zovala — lero ndi tsiku labwino kwambiri lokuuma.', b:'Dzuwa, mpweya ndi chinyezi chochepa zonse zikuthandiza. Chapani m’mawa kuti zovala zipeze nthawi yonse yakuuma.'},
-      good:{h:'Ndi bwino kuchapa — koma kuuma kudzachedwa pang’ono.', b:'Nyengo ndi yabwinobwino koma osati yabwino kwambiri. Pachikani zovala mwamsanga ndipo mupatseni nthawi yowonjezera, kapena muzipatule kuti mpweya uziyenda bwino.'},
-      borderlineRain:{h:'Pakati ndi pakati — chapani ngati muli ndi njira yakuumitsira mkati.', b:'Chinyezi kapena mwayi wa mvula zidzachedwetsa zinthu lero. Khalani ndi chingwe kapena rack mkati mwa nyumba.'},
-      borderline:{h:'Pakati ndi pakati — chapani ngati muli ndi njira yakuumitsira mkati.', b:'Dzuwa laling’ono ndi mpweya wosayenda zikutanthauza kuti tsiku lonse silingakwanire kuumitsa zovala zolemera.'},
-      poorRain:{h:'Ndi bwino kuti musachape lero.', b:'Mvula ingasokoneze kuuma kwa zovala. Sungani zovala zoti muchape tsiku lina loyera.'},
-      poor:{h:'Ndi bwino kuti musachape lero.', b:'Mitambo yambiri, chinyezi chochuluka ndi mphepo yochepa zikutanthauza kuti zovala sizingaume bwino lero.'}
-    }
-  };
-
-  const ALERT_TEXT = {
-    en:{
-      rain:{title:'Rain is likely later', body:'Precipitation chance climbs sharply around this time — bring clothes in before then, or hold off hanging them.'},
-      uv:{title:'Sun is strong enough to damage fabric', body:'UV climbs to a strong peak near this time. Bright, thin or dark items can fade or weaken — turn clothes inside out or move them to light shade for a couple of hours.'},
-      dusk:{title:'Take clothes in before dusk', body:"Sunset is around this time — bring washing in 30–45 minutes beforehand so dew doesn't settle on damp fabric overnight."},
-      cloud:{title:'Skies are set to cloud over', body:"Cloud cover rises sharply around this time, which will slow drying. Not necessarily rain — but don't expect much more sun after this."},
-      steady:{title:'No major changes expected before sunset', body:'Conditions look steady for the rest of daylight hours — a stable window for drying.'}
-    },
-    ny:{
-      rain:{title:'Mvula ingagwe pambuyo pake', body:'Mwayi wa mvula ukukwera kwambiri pafupi ndi nthawi imeneyi — bweretsani zovala mkati musanafike nthawiyo, kapena musazipachike choyamba.'},
-      uv:{title:'Dzuwa ndi lamphamvu mokwanira kuwononga nsalu', body:'Kuwala kwa UV kukukwera kwambiri pafupi ndi nthawi imeneyi. Zovala zowala, zopyapyala kapena zakuda zingasinthe mtundu kapena kufooka — pindulani zovala mkati kunja kapena muzisamutsire kumthunzi kwa maola angapo.'},
-      dusk:{title:'Bweretsani zovala mkati dzuwa lisanalowe', body:'Nthawi ya kulowa kwa dzuwa ili pafupi ndi ino — bweretsani zovala mphindi 30–45 nthawiyo isanafike kuti chinyezi chisagwere pa zovala zonyowa usiku wonse.'},
-      cloud:{title:'Mitambo ikubwera', body:'Mitambo ikuwonjezeka kwambiri pafupi ndi nthawi imeneyi, zomwe zidzachedwetsa kuuma. Sizitanthauza kuti mvula igwa — koma musayembekezere dzuwa lambiri pambuyo pake.'},
-      steady:{title:'Palibe kusintha kwakukulu dzuwa lisanalowe', body:'Nyengo ikuwoneka yokhazikika masana onse otsala — nthawi yodalirika yokuuma.'}
-    }
-  };
-
-  const WARM_TEXT = {
-    en:{
-      cold:{title:'Warm clothes today — mornings and evenings are cold.', body:(min)=>`Overnight/morning low around ${min}°C. A jumper or jacket is worth having, especially before sunrise and after dark.`},
-      cool:{title:'A light layer is a good idea.', body:(min,max)=>`Low near ${min}°C with a high of ${max}°C — cool at the edges of the day, mild by afternoon.`},
-      mild:{title:'No need for warm clothes today.', body:(min,max)=>`Temperatures stay comfortable, from ${min}°C to ${max}°C through the day.`}
-    },
-    ny:{
-      cold:{title:'Valani zovala zofunda lero — m’mawa ndi madzulo kuli kuzizira.', body:(min)=>`Kuzizira kwa usiku/m’mawa kuli pafupifupi ${min}°C. Sweta kapena jaketi ndi zofunika, makamaka dzuwa lisanatuluke ndi usiku.`},
-      cool:{title:'Ndi bwino kuvala chinthu chopepuka pamwamba.', body:(min,max)=>`Kuzizira kuli pafupi ${min}°C ndi kutentha kwa ${max}°C — kuzizira koyambirira ndi kumapeto kwa tsiku, koma kufunda masana.`},
-      mild:{title:'Palibe kufunika kovala zofunda lero.', body:(min,max)=>`Kutentha kukukhala kobwezerezeka, kuchokera ${min}°C mpaka ${max}°C tsiku lonse.`}
-    }
-  };
-
-  let lang = 'en';
-  function t(key){ return STR[lang][key]; }
-
-  // ---------- naive local time helpers ----------
-  function hm(iso){ const t = iso.split('T')[1]; const [h,m] = t.split(':').map(Number); return {h,m}; }
-  function fmt12FromHM(h,m){
+  // ---------- helpers for the naive local time strings Open-Meteo returns ----------
+  function hm(iso){ // "2026-07-02T14:00" -> {h,m}
+    const t = iso.split('T')[1];
+    const [h,m] = t.split(':').map(Number);
+    return {h,m};
+  }
+  function fmt12(iso){
+    const {h,m} = hm(iso);
     const period = h >= 12 ? 'PM' : 'AM';
     let hh = h % 12; if(hh===0) hh = 12;
     return `${hh}:${String(m).padStart(2,'0')} ${period}`;
   }
-  function fmt12(iso){ const {h,m} = hm(iso); return fmt12FromHM(h,m); }
   function fmtHourShort(iso){
-    const {h} = hm(iso); const period = h >= 12 ? 'p' : 'a'; let hh = h % 12; if(hh===0) hh = 12; return `${hh}${period}`;
+    const {h} = hm(iso);
+    const period = h >= 12 ? 'p' : 'a';
+    let hh = h % 12; if(hh===0) hh = 12;
+    return `${hh}${period}`;
   }
   function dateKey(iso){ return iso.split('T')[0]; }
-  function fmtMinutes(mins, l){
-    if(mins < 60) return l==='ny' ? `mphindi ${mins}` : `${mins} min`;
-    const h = Math.floor(mins/60), m = mins % 60;
-    if(l==='ny') return m ? `ola ${h} mphindi ${m}` : `ola ${h}`;
-    return m ? `${h}h ${m}m` : `${h}h`;
-  }
 
   // ---------- fetch ----------
   async function geocode(query){
@@ -578,37 +522,214 @@
 
   // ---------- scoring ----------
   function hourDryScore(h){
+    // h: {precip_prob, precip, humidity, cloud, wind, isDay}
     let rainScore = 100 - h.precip_prob;
     if(h.precip > 0.15) rainScore = Math.min(rainScore, 15);
     const humidityScore = 100 - h.humidity;
     const sunScore = 100 - h.cloud;
     const windScore = Math.min(100, h.wind * 4);
     let score = rainScore*0.40 + humidityScore*0.25 + sunScore*0.20 + windScore*0.15;
-    if(!h.isDay) score *= 0.35;
+    if(!h.isDay) score *= 0.35; // drying essentially stalls after dark / dew risk
     return Math.max(0, Math.min(100, Math.round(score)));
   }
 
-  function buildDayIndices(data, dateStr){
-    const times = data.hourly.time; const idxs = [];
-    for(let i=0;i<times.length;i++){ if(dateKey(times[i]) === dateStr) idxs.push(i); }
+  function buildDayIndices(data){
+    const times = data.hourly.time;
+    const today = dateKey(data.current.time);
+    const idxs = [];
+    for(let i=0;i<times.length;i++){
+      if(dateKey(times[i]) === today) idxs.push(i);
+    }
     return idxs;
   }
-  function currentIndex(data){ return data.hourly.time.indexOf(data.current.time); }
 
-  // ---------- fabric ----------
-  const FABRICS = ['tshirt','shirt','jeans','towel','sheet','sweaterF'];
-  const FABRIC_BASE_HOURS = { tshirt:1.5, shirt:1.7, jeans:4, towel:3.2, sheet:2.6, sweaterF:5 };
-  let selectedFabric = 'tshirt';
-
-  function estimateDrying(fabricKey, dayScore){
-    const base = FABRIC_BASE_HOURS[fabricKey];
-    const clampedScore = Math.max(12, Math.min(100, dayScore));
-    let hours = base * (85 / clampedScore);
-    hours = Math.round(hours * 4) / 4; // nearest quarter hour
-    return hours;
+  function currentIndex(data){
+    return data.hourly.time.indexOf(data.current.time);
   }
 
-  // ---------- render pieces ----------
+  // ---------- weekly / fabric helpers ----------
+  function addHours(iso, hours){
+    const [, timePart] = iso.split('T');
+    const [h, m] = timePart.split(':').map(Number);
+    let totalMin = h * 60 + m + Math.round(hours * 60);
+    totalMin = ((totalMin % 1440) + 1440) % 1440;
+    const dh = Math.floor(totalMin / 60), dm = totalMin % 60;
+    const period = dh >= 12 ? 'PM' : 'AM';
+    let hh = dh % 12; if (hh === 0) hh = 12;
+    return `${hh}:${String(dm).padStart(2, '0')} ${period}`;
+  }
+
+  function dryingTimeFor(baseHours, score){
+    const eff = Math.max(15, Math.min(100, score));
+    const factor = Math.pow(90 / eff, 1.15);
+    return Math.max(0.5, Math.min(12, baseHours * factor));
+  }
+
+  function formatHours(hrs){
+    const totalMin = Math.round((hrs * 60) / 15) * 15;
+    const hh = Math.floor(totalMin / 60), mm = totalMin % 60;
+    if (hh === 0) return `${mm}m`;
+    if (mm === 0) return `${hh}h`;
+    return `${hh}h ${mm}m`;
+  }
+
+  function starsFor(score){
+    if (score >= 85) return 5;
+    if (score >= 70) return 4;
+    if (score >= 50) return 3;
+    if (score >= 30) return 2;
+    return 1;
+  }
+
+  function dayLabel(score, rainMax){
+    if (rainMax >= 50) return 'Rain likely';
+    if (score >= 85) return 'Best washing day';
+    if (score >= 70) return 'Good drying';
+    if (score >= 50) return 'Fair, slower dry';
+    if (score >= 30) return 'Poor conditions';
+    return 'Avoid washing';
+  }
+
+  // computes a full-daylight-hours drying score for a given day offset (0 = today)
+  function computeDayScore(data, dayIndex){
+    const dateStr = data.daily.time[dayIndex];
+    const sr = hm(data.daily.sunrise[dayIndex]), ss = hm(data.daily.sunset[dayIndex]);
+    const srH = sr.h + sr.m / 60, ssH = ss.h + ss.m / 60;
+    const hourly = data.hourly;
+    const pairs = [];
+    for (let i = 0; i < hourly.time.length; i++){
+      if (dateKey(hourly.time[i]) !== dateStr) continue;
+      const t = hm(hourly.time[i]); const hf = t.h + t.m / 60;
+      if (hf < srH || hf >= ssH) continue;
+      const s = hourDryScore({
+        precip_prob: hourly.precipitation_probability[i],
+        precip: hourly.precipitation[i],
+        humidity: hourly.relative_humidity_2m[i],
+        cloud: hourly.cloud_cover[i],
+        wind: hourly.wind_speed_10m[i],
+        isDay: true
+      });
+      pairs.push({ i, s, time: hourly.time[i] });
+    }
+    const score = pairs.length ? Math.round(pairs.reduce((a, p) => a + p.s, 0) / pairs.length) : 0;
+    const best = pairs.length ? pairs.reduce((a, b) => (b.s > a.s ? b : a)) : null;
+    const rainMax = data.daily.precipitation_probability_max ? (data.daily.precipitation_probability_max[dayIndex] ?? 0) : 0;
+    return { score, best, dateStr, rainMax };
+  }
+
+  function renderWeekly(data, todayInfo){
+    const count = Math.min(7, data.daily.time.length);
+    const days = [];
+    for (let d = 0; d < count; d++){
+      if (d === 0){
+        days.push({ idx: 0, dateStr: data.daily.time[0], score: todayInfo.score, rainMax: todayInfo.rainMax, best: todayInfo.best });
+      } else {
+        days.push(Object.assign({ idx: d }, computeDayScore(data, d)));
+      }
+    }
+    const maxScore = Math.max(...days.map(x => x.score));
+
+    els.weekly.innerHTML = days.map(day => {
+      const d = new Date(day.dateStr + 'T12:00');
+      const dayName = day.idx === 0 ? 'Today' : d.toLocaleDateString('en-GB', { weekday: 'short' });
+      const dateNum = d.getDate();
+      const stars = starsFor(day.score);
+      const filled = '★'.repeat(stars);
+      const empty = `<span class="dim">${'★'.repeat(5 - stars)}</span>`;
+      const label = dayLabel(day.score, day.rainMax);
+      const isBest = day.score === maxScore && day.score >= 50;
+      return `
+        <div class="day-card${isBest ? ' best' : ''}">
+          <div class="day-name">${dayName} ${dateNum}</div>
+          <div class="day-stars" aria-label="${stars} out of 5 stars, ${label}">${filled}${empty}</div>
+          <div class="day-label">${label}</div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // ---------- weather-change detection ----------
+  function buildSnapshot(data, dayScore, rainSoonFlag){
+    return {
+      dayScore,
+      rainSoon: rainSoonFlag,
+      precipNow: data.current.precipitation,
+      windNow: data.current.wind_speed_10m,
+      cloudNow: data.current.cloud_cover,
+      time: data.current.time
+    };
+  }
+
+  function detectChanges(prev, next){
+    if (!prev) return [];
+    const changes = [];
+
+    if (prev.precipNow <= 0.1 && next.precipNow > 0.1){
+      changes.push({ title: 'It has started raining', body: 'Rain is falling now — bring washing in if it is still on the line.' });
+    }
+    if (next.dayScore - prev.dayScore <= -15){
+      changes.push({ title: 'Drying conditions have worsened', body: `The dry score dropped from ${prev.dayScore} to ${next.dayScore} since the last check.` });
+    } else if (next.dayScore - prev.dayScore >= 15){
+      changes.push({ title: 'Drying conditions have improved', body: `The dry score rose from ${prev.dayScore} to ${next.dayScore} since the last check.` });
+    }
+    if (!prev.rainSoon && next.rainSoon){
+      changes.push({ title: 'Rain risk has increased', body: 'The forecast now shows a real chance of rain before sunset — consider bringing clothes in early.' });
+    }
+    if (next.windNow - prev.windNow >= 15 && next.windNow >= 20){
+      changes.push({ title: 'Wind has picked up sharply', body: `Wind is now ${Math.round(next.windNow)} km/h — secure loose or lightweight items on the line.` });
+    }
+    if (next.cloudNow - prev.cloudNow >= 35){
+      changes.push({ title: 'Skies have clouded over quickly', body: 'Cloud cover has increased noticeably since the last check — expect slower drying from here.' });
+    }
+    return changes;
+  }
+
+  function showChangeBanner(changes){
+    if (!changes.length){ els.changeBanner.style.display = 'none'; return; }
+    els.changeList.innerHTML = changes.map(c => `
+      <div class="change-item">
+        <div style="flex:1"><b>${c.title}</b><p>${c.body}</p></div>
+      </div>
+    `).join('');
+    els.changeBanner.style.display = 'block';
+    if (notifyEnabled && 'Notification' in window && Notification.permission === 'granted'){
+      const top = changes[0];
+      try { new Notification(top.title, { body: top.body }); } catch (e) {}
+    }
+  }
+
+  function renderBestTime(dayScore, todayBest, hasRemainingWindow){
+    if (!hasRemainingWindow){
+      els.bestTimeNote.textContent = 'No drying window left today — check tomorrow.';
+      return;
+    }
+    if (!todayBest || dayScore < 30){
+      els.bestTimeNote.textContent = '';
+      return;
+    }
+    const hangTime = fmt12(todayBest.time);
+    const dryHours = dryingTimeFor(1.2, dayScore); // t-shirt as a representative item
+    const dryBy = addHours(todayBest.time, dryHours);
+    els.bestTimeNote.textContent = `Best time to hang: ${hangTime} · likely dry by ${dryBy}`;
+  }
+
+  function renderFabrics(score){
+    const fabrics = [
+      { label: 'T-shirt', hours: 1.2 },
+      { label: 'Bedsheet', hours: 2.5 },
+      { label: 'Towel', hours: 3 },
+      { label: 'Jeans', hours: 4 }
+    ];
+    els.fabrics.innerHTML = fabrics.map(f => `
+      <div class="factor-card">
+        <div class="ficon">${ICONS.fabric}</div>
+        <div class="fval">${formatHours(dryingTimeFor(f.hours, score))}</div>
+        <div class="flabel">${f.label}</div>
+      </div>
+    `).join('');
+  }
+
+  // ---------- render ----------
   function setScoreRing(score){
     const clamped = Math.max(0, Math.min(100, score));
     const offset = RING_C * (1 - clamped/100);
@@ -622,40 +743,50 @@
     els.scoreVal.textContent = clamped;
   }
 
-  function verdictFor(score, rainSoon){
-    const V = VERDICTS[lang];
-    if(score >= 75) return V.excellent;
-    if(score >= 55) return V.good;
-    if(score >= 35) return rainSoon ? V.borderlineRain : V.borderline;
-    return rainSoon ? V.poorRain : V.poor;
-  }
-
-  function renderLegend(){
-    els.legend.innerHTML = `
-      <span><i style="background:var(--good)"></i>${t('legendGood')}</span>
-      <span><i style="background:var(--gold-soft)"></i>${t('legendSun')}</span>
-      <span><i style="background:var(--storm-soft)"></i>${t('legendSlow')}</span>
-      <span><i style="background:var(--ember-soft)"></i>${t('legendRain')}</span>
-      <span><i style="background:var(--dusk)"></i>${t('legendDark')}</span>
-    `;
+  function verdictFor(score, rainSoon, uvMax){
+    if(score >= 75){
+      return { h:"Hang it up — today's a great drying day.",
+        b:"Sun, air and low humidity are all in your favour. Wash in the morning so clothes get the full drying window." };
+    }
+    if(score >= 55){
+      return { h:"Good enough to wash — expect a slower dry.",
+        b:"Conditions are decent but not ideal. Hang clothes as early as possible and give them extra time, or space them out for better airflow." };
+    }
+    if(score >= 35){
+      return { h:"Borderline — only wash if you can dry indoors as backup.",
+        b: rainSoon ? "Humidity or a chance of rain will slow things down today. Have an indoor line or rack ready." : "Weak sun and still air mean a full day may not be enough to dry heavier items." };
+    }
+    return { h:"Better to hold off washing today.",
+      b: rainSoon ? "Rain is likely to interrupt drying. Save the laundry for a clearer day if you can." : "Heavy cloud, high humidity and little wind mean clothes are unlikely to dry properly today." };
   }
 
   function renderPegs(data, dayIdxs, nowIdx){
     els.pegs.innerHTML = '';
+    // show from sunrise hour through ~2 hours after sunset for dew context
     const sunset = data.daily.sunset[0];
     const sunsetHM = hm(sunset);
-    let showIdxs = dayIdxs.filter(i => { const {h} = hm(data.hourly.time[i]); return h >= 5 && h <= Math.min(23, sunsetHM.h + 2); });
-    if(showIdxs.length > 16){ const step = Math.ceil(showIdxs.length/16); showIdxs = showIdxs.filter((_,k)=> k % step === 0); }
+    let showIdxs = dayIdxs.filter(i => {
+      const {h} = hm(data.hourly.time[i]);
+      return h >= 5 && h <= Math.min(23, sunsetHM.h + 2);
+    });
+    // thin out to keep it readable on mobile (every hour up to ~16 slots)
+    if(showIdxs.length > 16){
+      const step = Math.ceil(showIdxs.length/16);
+      showIdxs = showIdxs.filter((_,k)=> k % step === 0);
+    }
     showIdxs.forEach(i=>{
       const time = data.hourly.time[i];
       const code = data.hourly.weather_code[i];
+      const cloud = data.hourly.cloud_cover[i];
       const precipProb = data.hourly.precipitation_probability[i];
       const humidity = data.hourly.relative_humidity_2m[i];
       const {h} = hm(time);
       const isDayHour = h >= hm(data.daily.sunrise[0]).h && h < sunsetHM.h;
+
       const slot = document.createElement('div');
       slot.className = 'peg-slot' + (i === nowIdx ? ' now' : '') + (i < nowIdx ? ' taken' : '');
       const color = colorForCode(code, isDayHour, humidity, precipProb);
+
       slot.innerHTML = `
         <span class="peg-label">${fmtHourShort(time)}</span>
         <span class="peg-icon" style="color:${color}">${iconForCode(code, isDayHour)}</span>
@@ -668,11 +799,11 @@
 
   function renderFactors(cur, todayDaily){
     const items = [
-      { icon: ICONS.rain, val: `${todayDaily.precipitation_probability_max ?? 0}%`, label: lang==='ny'?'Mvula':'Rain chance', note: (todayDaily.precipitation_probability_max ?? 0) >= 40 ? (lang==='ny'?'Mvula ingagwe — onetsetsani kumwamba.':'Rain is likely — keep an eye on the sky.') : (lang==='ny'?'Mwayi wochepa wa mvula lero.':'Low chance of rain interrupting drying.') },
-      { icon: ICONS.drop, val: `${cur.relative_humidity_2m}%`, label: lang==='ny'?'Chinyezi':'Humidity', note: cur.relative_humidity_2m >= 70 ? (lang==='ny'?'Mpweya wonyowa — zovala zidzachedwa kuuma.':'Muggy air — clothes will dry slowly.') : cur.relative_humidity_2m >= 50 ? (lang==='ny'?'Pakati ndi pakati — kuuma kudzatenga nthawi.':'Moderate — drying will take a bit longer.') : (lang==='ny'?'Mpweya wouma — bwino kwambiri kuuma.':'Dry air — great for evaporation.') },
-      { icon: ICONS.wind, val: `${Math.round(cur.wind_speed_10m)} km/h`, label: lang==='ny'?'Mphepo':'Wind', note: cur.wind_speed_10m >= 15 ? (lang==='ny'?'Mphepo yabwino yothandiza kuuma.':'Good breeze to speed up drying.') : cur.wind_speed_10m >= 7 ? (lang==='ny'?'Mphepo yocheperako.':'Light air movement.') : (lang==='ny'?'Palibe mphepo — dzuwa lokha lithandiza.':'Very still — drying relies mostly on sun.') },
-      { icon: ICONS.cloud, val: `${cur.cloud_cover}%`, label: lang==='ny'?'Mitambo':'Cloud cover', note: cur.cloud_cover >= 70 ? (lang==='ny'?'Mitambo yambiri — dzuwa locheperako lero.':'Mostly overcast — weak sun today.') : cur.cloud_cover >= 35 ? (lang==='ny'?'Mitambo pang’ono.':'Partly cloudy skies.') : (lang==='ny'?'Kumwamba koyera — dzuwa lambiri.':'Mostly clear — strong sun exposure.') },
-      { icon: ICONS.uv, val: `${todayDaily.uv_index_max ?? '–'}`, label: lang==='ny'?'UV yapamwamba':'Peak UV', note: (todayDaily.uv_index_max ?? 0) >= 8 ? (lang==='ny'?'Yapamwamba kwambiri — dzuwa lingawononge nsalu.':'Very high — sun can fade or weaken fabric.') : (todayDaily.uv_index_max ?? 0) >= 6 ? (lang==='ny'?'Yapamwamba — mitundu yakuda ingasinthe.':'High — dark colours may fade with long exposure.') : (lang==='ny'?'Yocheperako — yotetezeka tsiku lonse.':'Mild — safe for full-day sun.') },
+      { icon: ICONS.rain, val: `${todayDaily.precipitation_probability_max ?? 0}%`, label:'Rain chance', note: (todayDaily.precipitation_probability_max ?? 0) >= 40 ? 'Rain is likely — keep an eye on the sky.' : 'Low chance of rain interrupting drying.' },
+      { icon: ICONS.drop, val: `${cur.relative_humidity_2m}%`, label:'Humidity', note: cur.relative_humidity_2m >= 70 ? 'Muggy air — clothes will dry slowly.' : cur.relative_humidity_2m >= 50 ? 'Moderate — drying will take a bit longer.' : 'Dry air — great for evaporation.' },
+      { icon: ICONS.wind, val: `${Math.round(cur.wind_speed_10m)} km/h`, label:'Wind', note: cur.wind_speed_10m >= 15 ? 'Good breeze to speed up drying.' : cur.wind_speed_10m >= 7 ? 'Light air movement.' : 'Very still — drying relies mostly on sun.' },
+      { icon: ICONS.cloud, val: `${cur.cloud_cover}%`, label:'Cloud cover', note: cur.cloud_cover >= 70 ? 'Mostly overcast — weak sun today.' : cur.cloud_cover >= 35 ? 'Partly cloudy skies.' : 'Mostly clear — strong sun exposure.' },
+      { icon: ICONS.uv, val: `${todayDaily.uv_index_max ?? '–'}`, label:'Peak UV', note: (todayDaily.uv_index_max ?? 0) >= 8 ? 'Very high — sun can fade or weaken fabric.' : (todayDaily.uv_index_max ?? 0) >= 6 ? 'High — dark colours may fade with long exposure.' : 'Mild — safe for full-day sun.' },
     ];
     els.factors.innerHTML = items.map(it => `
       <div class="factor-card">
@@ -684,281 +815,339 @@
     `).join('');
   }
 
-  function renderRiskMeters(cur, todayDaily){
-    const rainRisk = Math.round(todayDaily.precipitation_probability_max ?? 0);
-    const sunDamage = Math.round(Math.min(100, ((todayDaily.uv_index_max ?? 0) / 12) * 100));
-    const windBenefit = Math.round(Math.min(100, (cur.wind_speed_10m / 25) * 100));
-    const humidityRisk = Math.round(cur.relative_humidity_2m);
-    const rows = [
-      { label: t('riskRain'), val: rainRisk, color:'var(--ember-soft)' },
-      { label: t('riskSun'), val: sunDamage, color:'var(--gold-soft)' },
-      { label: t('riskWind'), val: windBenefit, color:'var(--good)' },
-      { label: t('riskHumidity'), val: humidityRisk, color:'var(--storm-soft)' },
-    ];
-    els.riskGrid.innerHTML = rows.map(r => `
-      <div class="risk-row">
-        <div class="r-top"><b>${r.label}</b><span>${r.val}%</span></div>
-        <div class="risk-track"><div class="risk-fill" style="width:${r.val}%; background:${r.color}"></div></div>
-      </div>
-    `).join('');
-  }
-
-  function renderFabricPicker(){
-    els.fabricPills.innerHTML = FABRICS.map(f => `
-      <button type="button" class="fabric-pill ${f===selectedFabric?'active':''}" data-fabric="${f}">${t('fabricNames')[f]}</button>
-    `).join('');
-    els.fabricPills.querySelectorAll('.fabric-pill').forEach(btn=>{
-      btn.addEventListener('click', ()=>{ selectedFabric = btn.getAttribute('data-fabric'); if(state.data) renderAll(); });
-    });
-  }
-
-  function renderFabricResult(dayScore, sunsetHM, nowHM){
-    const hours = estimateDrying(selectedFabric, dayScore);
-    const totalMin = nowHM.h*60 + nowHM.m + Math.round(hours*60);
-    const sunsetMin = sunsetHM.h*60 + sunsetHM.m;
-    const crossesSunset = totalMin > sunsetMin;
-    const dryH = Math.floor(totalMin/60) % 24, dryM = totalMin % 60;
-    const timeLabel = lang==='ny' ? (hours < 1 ? `mphindi ${Math.round(hours*60)}` : `${hours} ola`) : (hours < 1 ? `${Math.round(hours*60)} min` : `${hours} hr`);
-    els.fabricResult.innerHTML = `
-      <div>
-        <div class="f-time">${timeLabel}</div>
-        <div class="f-time-label">${t('fabricNames')[selectedFabric]}</div>
-      </div>
-      <div class="f-detail">
-        <p><strong>${t('dryByPrefix')} ${fmt12FromHM(dryH,dryM)}</strong></p>
-        ${crossesSunset ? `<p style="margin-top:6px;">${t('pastSunsetNote')}</p>` : ''}
-      </div>
-    `;
-    els.fabricNote.textContent = t('fabricNote');
-  }
-
   function buildAlerts(data, dayIdxs, nowIdx){
-    const A = ALERT_TEXT[lang];
     const alerts = [];
     const sunset = data.daily.sunset[0];
+
+    // 1. Rain incoming
     let rainIdx = -1;
-    for(const i of dayIdxs){ if(i < nowIdx) continue; if(data.hourly.precipitation_probability[i] >= 40){ rainIdx = i; break; } }
-    if(rainIdx !== -1){
-      alerts.push({ type:'warn', icon: ICONS.rain, title:A.rain.title, body:A.rain.body, time: fmt12(data.hourly.time[rainIdx]) });
+    for(const i of dayIdxs){
+      if(i < nowIdx) continue;
+      if(data.hourly.precipitation_probability[i] >= 40){ rainIdx = i; break; }
     }
+    if(rainIdx !== -1){
+      alerts.push({
+        type:'warn', icon: ICONS.rain,
+        title:'Rain is likely later',
+        body:`Precipitation chance climbs to ${data.hourly.precipitation_probability[rainIdx]}% around this time — bring clothes in before then, or hold off hanging them.`,
+        time: fmt12(data.hourly.time[rainIdx])
+      });
+    }
+
+    // 2. UV / sun intensity peak
     const uvMax = data.daily.uv_index_max[0] ?? 0;
     if(uvMax >= 8){
       let peakIdx = -1, peakVal = -1;
-      for(const i of dayIdxs){ const v = data.hourly.uv_index[i]; if(v > peakVal){ peakVal = v; peakIdx = i; } }
-      alerts.push({ type:'sun', icon: ICONS.uv, title:A.uv.title, body:A.uv.body, time: peakIdx !== -1 ? fmt12(data.hourly.time[peakIdx]) : '' });
+      for(const i of dayIdxs){
+        const v = data.hourly.uv_index[i];
+        if(v > peakVal){ peakVal = v; peakIdx = i; }
+      }
+      alerts.push({
+        type:'sun', icon: ICONS.uv,
+        title:'Sun is strong enough to damage fabric',
+        body:`UV peaks around ${peakVal} near this time. Bright, thin or dark items can fade or weaken — turn clothes inside out or move them to light shade for a couple of hours.`,
+        time: peakIdx !== -1 ? fmt12(data.hourly.time[peakIdx]) : ''
+      });
     }
-    alerts.push({ type:'good', icon: ICONS.moon, title:A.dusk.title, body:A.dusk.body, time: fmt12(sunset) });
+
+    // 3. Sunset / dew warning
+    alerts.push({
+      type:'good', icon: ICONS.moon,
+      title:'Take clothes in before dusk',
+      body:`Sunset is around this time — bring washing in 30–45 minutes beforehand so dew doesn't settle on damp fabric overnight.`,
+      time: fmt12(sunset)
+    });
+
+    // 4. Cloud building up sharply (skies turning) after now, before sunset
     let cloudJumpIdx = -1;
     for(const i of dayIdxs){
       if(i <= nowIdx || i+1 > dayIdxs[dayIdxs.length-1]) continue;
-      const now_c = data.hourly.cloud_cover[i], next_c = data.hourly.cloud_cover[i+1];
+      const now_c = data.hourly.cloud_cover[i];
+      const next_c = data.hourly.cloud_cover[i+1];
       if(next_c - now_c >= 30){ cloudJumpIdx = i+1; break; }
     }
     if(cloudJumpIdx !== -1 && rainIdx === -1){
-      alerts.push({ type:'warn', icon: ICONS.cloud, title:A.cloud.title, body:A.cloud.body, time: fmt12(data.hourly.time[cloudJumpIdx]) });
+      alerts.push({
+        type:'warn', icon: ICONS.cloud,
+        title:'Skies are set to cloud over',
+        body:`Cloud cover rises sharply around this time, which will slow drying. Not necessarily rain — but don't expect much more sun after this.`,
+        time: fmt12(data.hourly.time[cloudJumpIdx])
+      });
     }
-    if(!alerts.some(a=>a.type==='warn')){
-      alerts.unshift({ type:'good', icon: ICONS.sun, title:A.steady.title, body:A.steady.body, time:'' });
+
+    if(!alerts.some(a=>a.type==='warn') ){
+      alerts.unshift({
+        type:'good', icon: ICONS.sun,
+        title:'No major changes expected before sunset',
+        body:'Conditions look steady for the rest of daylight hours — a stable window for drying.',
+        time:''
+      });
     }
+
     els.alerts.innerHTML = alerts.map(a => `
       <div class="alert ${a.type}">
         <span class="a-icon">${a.icon}</span>
-        <div style="flex:1"><b>${a.title}</b><p>${a.body}</p></div>
+        <div style="flex:1">
+          <b>${a.title}</b>
+          <p>${a.body}</p>
+        </div>
         ${a.time ? `<time>${a.time}</time>` : ''}
       </div>
     `).join('');
-    return { rainIdx, sunset };
   }
 
   function renderWarmCard(todayDaily){
-    const min = Math.round(todayDaily.temperature_2m_min[0]);
-    const max = Math.round(todayDaily.temperature_2m_max[0]);
-    const W = WARM_TEXT[lang];
-    let icon, entry, body;
-    if(min <= 12){ icon = ICONS.sweater; entry = W.cold; body = W.cold.body(min); }
-    else if(min <= 17){ icon = ICONS.sweater; entry = W.cool; body = W.cool.body(min,max); }
-    else { icon = ICONS.tee; entry = W.mild; body = W.mild.body(min,max); }
-    els.warmCard.innerHTML = `<span class="w-icon">${icon}</span><div><b>${entry.title}</b><p>${body}</p></div>`;
+    const min = todayDaily.temperature_2m_min[0];
+    const max = todayDaily.temperature_2m_max[0];
+    let icon = ICONS.tee, title, body;
+    if(min <= 12){
+      icon = ICONS.sweater;
+      title = "Warm clothes today — mornings and evenings are cold.";
+      body = `Overnight/morning low around ${Math.round(min)}°C. A jumper or jacket is worth having, especially before sunrise and after dark.`;
+    } else if(min <= 17){
+      icon = ICONS.sweater;
+      title = "A light layer is a good idea.";
+      body = `Low near ${Math.round(min)}°C with a high of ${Math.round(max)}°C — cool at the edges of the day, mild by afternoon.`;
+    } else {
+      icon = ICONS.tee;
+      title = "No need for warm clothes today.";
+      body = `Temperatures stay comfortable, from ${Math.round(min)}°C to ${Math.round(max)}°C through the day.`;
+    }
+    els.warmCard.innerHTML = `
+      <span class="w-icon">${icon}</span>
+      <div><b>${title}</b><p>${body}</p></div>
+    `;
   }
 
-  function buildWeek(data){
-    const days = data.daily.time;
-    return days.map((dateStr, di) => {
-      const sunriseH = hm(data.daily.sunrise[di]).h;
-      const sunsetH = hm(data.daily.sunset[di]).h;
-      const idxs = [];
-      for(let i=0;i<data.hourly.time.length;i++){
-        if(dateKey(data.hourly.time[i]) === dateStr){
-          const hh = hm(data.hourly.time[i]).h;
-          if(hh >= sunriseH && hh < sunsetH) idxs.push(i);
-        }
+  // ---------- chat assistant ----------
+  function buildChatContext(loc, data, dayScore, rainSoonFlag, todayBest, hasWindow, todayDaily){
+    const count = Math.min(7, data.daily.time.length);
+    const weekly = [];
+    for (let d = 0; d < count; d++){
+      const c = d === 0
+        ? { score: dayScore, rainMax: todayDaily.precipitation_probability_max }
+        : computeDayScore(data, d);
+      weekly.push({
+        day: d === 0 ? 'Today' : new Date(data.daily.time[d] + 'T12:00').toLocaleDateString('en-GB', { weekday: 'long' }),
+        date: data.daily.time[d],
+        score: c.score,
+        label: dayLabel(c.score, c.rainMax)
+      });
+    }
+    const fabricHours = { tshirt: 1.2, bedsheet: 2.5, towel: 3, jeans: 4, blanket: 5, socks: 0.7 };
+    const fabricDryingTimes = {};
+    Object.keys(fabricHours).forEach(k => { fabricDryingTimes[k] = formatHours(dryingTimeFor(fabricHours[k], dayScore)); });
+
+    return {
+      location: loc.name,
+      updated: data.current.time,
+      todayScore: dayScore,
+      todayVerdict: els.verdictHeadline.textContent + ' ' + els.verdictBody.textContent,
+      rainSoon: rainSoonFlag,
+      bestHangTime: hasWindow && todayBest ? fmt12(todayBest.time) : null,
+      fabricDryingTimes,
+      weekly
+    };
+  }
+
+  function localAnswer(question, ctx){
+    if (!ctx) return "I don't have this location's forecast loaded yet — try again in a moment.";
+    const q = question.toLowerCase();
+    const fabricWords = {
+      tshirt: ['t-shirt', 'tshirt', 'shirt'],
+      bedsheet: ['bedsheet', 'bed sheet', 'sheet'],
+      towel: ['towel'],
+      jeans: ['jeans', 'denim', 'trousers', 'pants'],
+      blanket: ['blanket', 'duvet', 'comforter'],
+      socks: ['sock']
+    };
+    let matchedFabric = null;
+    for (const key in fabricWords){
+      if (fabricWords[key].some(w => q.includes(w))){ matchedFabric = key; break; }
+    }
+
+    if (matchedFabric){
+      const niceName = matchedFabric === 'tshirt' ? 't-shirt' : matchedFabric;
+      return `Right now in ${ctx.location}, a ${niceName} hung up should take about ${ctx.fabricDryingTimes[matchedFabric]} to dry, based on today's score of ${ctx.todayScore}/100.${ctx.rainSoon ? ' Rain is expected before sunset, so bring it in early even if it feels a bit damp.' : ''}`;
+    }
+    if (q.includes('rain')){
+      return ctx.rainSoon
+        ? `Yes — there's a real chance of rain before sunset in ${ctx.location} today. I'd bring washing in early or hold off hanging anything new.`
+        : `Rain looks unlikely for the rest of today in ${ctx.location}. Conditions currently support a score of ${ctx.todayScore}/100.`;
+    }
+    if (q.includes('dry') || q.includes('how long')){
+      return `Using a t-shirt as a rough reference, expect about ${ctx.fabricDryingTimes.tshirt} in current conditions (score ${ctx.todayScore}/100). Heavier items like towels or jeans will take longer — ask about a specific item for a closer estimate.`;
+    }
+    if (q.includes('best time') || q.includes('when should i hang') || q.includes('what time')){
+      return ctx.bestHangTime
+        ? `The best remaining window today looks like around ${ctx.bestHangTime}.`
+        : `There's not much daylight left today for a fresh load — worth checking again in the morning.`;
+    }
+    if (q.includes('wash') || q.includes('good idea') || q.includes('should i')){
+      const hangLine = ctx.bestHangTime ? ` If you do wash, the best remaining window is around ${ctx.bestHangTime}.` : '';
+      return `${ctx.todayVerdict}${hangLine}`;
+    }
+    if (q.includes('week') || q.includes('best day')){
+      const best = ctx.weekly.slice().sort((a, b) => b.score - a.score)[0];
+      return `Looking at the week ahead, ${best.day} looks like the best washing day — ${best.label.toLowerCase()}.`;
+    }
+    return `Quick summary for ${ctx.location}: ${ctx.todayVerdict} Ask me about a specific fabric, rain, or the best time to hang for more detail.`;
+  }
+
+  function appendChatMsg(role, text, extraClass){
+    const div = document.createElement('div');
+    div.className = `chat-msg ${role}${extraClass ? ' ' + extraClass : ''}`;
+    div.textContent = text;
+    els.chatLog.appendChild(div);
+    els.chatLog.scrollTop = els.chatLog.scrollHeight;
+    return div;
+  }
+
+  async function askAssistant(question){
+    if (!question) return;
+    appendChatMsg('user', question);
+    const ctx = lastContext;
+
+    // No key on file — answer instantly from the built-in template, no point
+    // attempting a network call that has nothing to authenticate with.
+    if (!apiKey){
+      appendChatMsg('bot', localAnswer(question, ctx));
+      return;
+    }
+
+    const thinkingEl = appendChatMsg('bot', 'Asking Claude…', 'thinking');
+    try{
+      const systemPrompt = `You are the laundry-weather assistant built into "On The Line," a Malawi-focused wash-day app. Answer using ONLY the JSON weather context below — never invent numbers that aren't there. Keep answers to 2-4 short sentences, practical and specific (mention times or hours where useful). If asked about a fabric that isn't listed, estimate it from the closest listed fabric under the same conditions.
+
+Weather context:
+${JSON.stringify(ctx)}`;
+
+      const messages = chatHistory.concat([{ role: 'user', content: question }]);
+
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true'
+        },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 1000,
+          system: systemPrompt,
+          messages
+        })
+      });
+      if (!res.ok){
+        const errBody = await res.json().catch(()=>({}));
+        throw new Error(errBody?.error?.message || `Claude API returned ${res.status}`);
       }
-      const scores = idxs.map(i => hourDryScore({
-        precip_prob:data.hourly.precipitation_probability[i], precip:data.hourly.precipitation[i],
-        humidity:data.hourly.relative_humidity_2m[i], cloud:data.hourly.cloud_cover[i], wind:data.hourly.wind_speed_10m[i], isDay:true
-      }));
-      const score = scores.length ? Math.round(scores.reduce((a,b)=>a+b,0)/scores.length) : 50;
-      return { dateStr, score };
-    });
-  }
+      const data = await res.json();
+      const answer = (data.content || [])
+        .filter(b => b.type === 'text')
+        .map(b => b.text)
+        .join('\n')
+        .trim() || localAnswer(question, ctx);
 
-  function starsFor(score){
-    if(score >= 80) return 5; if(score >= 65) return 4; if(score >= 45) return 3; if(score >= 25) return 2; return 1;
-  }
-
-  function renderWeek(weekData){
-    const bestScore = Math.max(...weekData.map(d=>d.score));
-    els.weekScroll.innerHTML = weekData.map((d, i) => {
-      const dt = new Date(d.dateStr + 'T12:00:00');
-      const dow = dt.getDay();
-      const dayName = i === 0 ? t('today') : t('weekdays')[dow];
-      const dateLabel = `${dt.getDate()}/${dt.getMonth()+1}`;
-      const stars = starsFor(d.score);
-      const isBest = d.score === bestScore && d.score >= 55;
-      return `
-        <div class="day-card ${isBest ? 'best' : ''}">
-          ${isBest ? `<span class="d-badge">${t('bestBadge')}</span>` : ''}
-          <div class="d-name">${dayName}</div>
-          <div class="d-date">${dateLabel}</div>
-          <div class="d-stars">${'★'.repeat(stars)}${'☆'.repeat(5-stars)}</div>
-          <div class="d-label">${t('starLabels')[stars-1]}</div>
-        </div>
-      `;
-    }).join('');
-  }
-
-  // ---------- countdown / offline / reminders ----------
-  let countdownTimer = null;
-  let notifTimers = [];
-
-  function clearCountdown(){ if(countdownTimer) clearInterval(countdownTimer); countdownTimer = null; }
-  function clearNotifTimers(){ notifTimers.forEach(id=>clearTimeout(id)); notifTimers = []; }
-
-  function setupCountdown(data, rainIdx, sunsetIso){
-    clearCountdown();
-    const nowHMobj = hm(data.current.time);
-    const nowMin = nowHMobj.h*60 + nowHMobj.m;
-    let targetMin = null, kind = null;
-    if(rainIdx !== -1){
-      const rHM = hm(data.hourly.time[rainIdx]);
-      targetMin = rHM.h*60 + rHM.m; kind = 'rain';
+      thinkingEl.remove();
+      appendChatMsg('bot', answer);
+      chatHistory = messages.concat([{ role: 'assistant', content: answer }]).slice(-12);
+    }catch(err){
+      thinkingEl.remove();
+      appendChatMsg('bot', `${localAnswer(question, ctx)}\n\n(Couldn't reach Claude just now — check your API key. ${err.message || ''})`.trim());
     }
-    const sHM = hm(sunsetIso);
-    const sunsetMin = sHM.h*60 + sHM.m;
-    if(targetMin === null || sunsetMin < targetMin){
-      if(sunsetMin > nowMin){ targetMin = sunsetMin; kind = 'dusk'; }
-    }
-    if(targetMin === null || targetMin <= nowMin){ els.countdownBanner.innerHTML = ''; return; }
-    let remaining = targetMin - nowMin;
-    function paint(){
-      if(remaining <= 0){ els.countdownBanner.innerHTML = ''; clearCountdown(); return; }
-      const msg = kind === 'rain' ? t('rainCountdown')(fmtMinutes(remaining, lang)) : t('duskCountdown')(fmtMinutes(remaining, lang));
-      els.countdownBanner.innerHTML = `<div class="banner countdown">${ICONS.bell.replace('<svg','<svg class="b-icon"')}<span>${msg}</span><button class="b-close" aria-label="Dismiss">✕</button></div>`;
-      const closeBtn = els.countdownBanner.querySelector('.b-close');
-      if(closeBtn) closeBtn.addEventListener('click', ()=>{ els.countdownBanner.innerHTML=''; clearCountdown(); });
-    }
-    paint();
-    countdownTimer = setInterval(()=>{ remaining -= 1; paint(); }, 60000);
   }
 
-  function setupNotifications(data, rainIdx, sunsetIso){
-    clearNotifTimers();
-    if(!('Notification' in window) || Notification.permission !== 'granted') return;
-    const nowHMobj = hm(data.current.time);
-    const nowMin = nowHMobj.h*60 + nowHMobj.m;
-    const targets = [];
-    if(rainIdx !== -1){
-      const rHM = hm(data.hourly.time[rainIdx]);
-      targets.push({ min: rHM.h*60+rHM.m, title: lang==='ny' ? 'Mvula yayandikira' : 'Rain is close', body: ALERT_TEXT[lang].rain.body });
-    }
-    const sHM = hm(sunsetIso);
-    targets.push({ min: sHM.h*60+sHM.m - 30, title: lang==='ny' ? 'Dzuwa lili pafupi kulowa' : 'Sunset is coming up', body: ALERT_TEXT[lang].dusk.body });
-    targets.forEach(tg => {
-      const deltaMin = tg.min - nowMin;
-      if(deltaMin > 0 && deltaMin < 14*60){
-        const id = setTimeout(()=>{ try{ new Notification(tg.title, { body: tg.body }); }catch(e){} }, deltaMin*60000);
-        notifTimers.push(id);
-      }
-    });
-  }
-
-  function showOfflineBanner(savedAt){
-    const d = new Date(savedAt);
-    const label = d.toLocaleString();
-    els.offlineBanner.innerHTML = `<div class="banner offline">${ICONS.wifi.replace('<svg','<svg class="b-icon"')}<span>${t('offlinePrefix')} ${label}</span></div>`;
-  }
-  function clearOfflineBanner(){ els.offlineBanner.innerHTML = ''; }
-
-  function saveCache(loc, data){
-    try{ localStorage.setItem(CACHE_KEY, JSON.stringify({ loc, data, savedAt: new Date().toISOString() })); }catch(e){}
-  }
-  function readCache(){
-    try{ const raw = localStorage.getItem(CACHE_KEY); return raw ? JSON.parse(raw) : null; }catch(e){ return null; }
-  }
+  els.chatForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const q = els.chatInput.value.trim();
+    if(!q) return;
+    els.chatInput.value = '';
+    askAssistant(q);
+  });
+  els.chatSuggestions.querySelectorAll('.chip').forEach(chip=>{
+    chip.addEventListener('click', ()=> askAssistant(chip.textContent));
+  });
 
   // ---------- orchestration ----------
-  const state = { data:null, loc:null };
+  let currentLoc = null;
+  let lastSnapshot = null;
+  let notifyEnabled = false;
+  let lastContext = null;
+  let chatHistory = [];
+  let apiKey = '';
+  try{ apiKey = sessionStorage.getItem('otl_api_key') || ''; }catch(e){ /* storage unavailable, e.g. private mode */ }
+  if(apiKey) els.apiKeyInput.value = apiKey;
+
+  els.apiKeySave.addEventListener('click', ()=>{
+    apiKey = els.apiKeyInput.value.trim();
+    try{
+      if(apiKey) sessionStorage.setItem('otl_api_key', apiKey);
+      else sessionStorage.removeItem('otl_api_key');
+    }catch(e){ /* storage unavailable, key still works for this session via the apiKey variable */ }
+    els.apiKeySave.textContent = 'Saved ✓';
+    els.apiKeySave.classList.add('saved');
+    setTimeout(()=>{ els.apiKeySave.textContent = 'Save'; els.apiKeySave.classList.remove('saved'); }, 1500);
+  });
 
   async function loadFor(loc){
     els.loading.style.display = 'flex';
     els.app.style.display = 'none';
     els.errorBox.innerHTML = '';
-    clearOfflineBanner();
-    if(navigator.onLine === false){
-      const cached = readCache();
-      if(cached){ state.data = cached.data; state.loc = cached.loc; showOfflineBanner(cached.savedAt); renderAll(); els.loading.style.display='none'; els.app.style.display='block'; return; }
-    }
     try{
       const data = await fetchWeather(loc.lat, loc.lon);
-      state.data = data; state.loc = loc;
-      saveCache(loc, data);
-      renderAll();
+      currentLoc = loc;
+      render(loc, data);
       els.loading.style.display = 'none';
       els.app.style.display = 'block';
     }catch(err){
-      const cached = readCache();
-      if(cached){
-        state.data = cached.data; state.loc = cached.loc;
-        showOfflineBanner(cached.savedAt);
-        renderAll();
-        els.loading.style.display = 'none';
-        els.app.style.display = 'block';
-      } else {
-        els.loading.style.display = 'none';
-        els.errorBox.innerHTML = `<div class="error-box">${err.message || t('errorGeneric')}</div>`;
-      }
+      els.loading.style.display = 'none';
+      els.errorBox.innerHTML = `<div class="error-box">${err.message || 'Something went wrong fetching the forecast.'}</div>`;
     }
   }
 
-  function renderAll(){
-    if(!state.data || !state.loc) return;
-    const data = state.data, loc = state.loc;
-    const dayIdxs = buildDayIndices(data, dateKey(data.current.time));
+  function render(loc, data){
+    const dayIdxs = buildDayIndices(data);
     let nowIdx = currentIndex(data);
     if(nowIdx === -1) nowIdx = dayIdxs[0];
 
     els.placeName.textContent = loc.name;
     els.placeSub.textContent = loc.country ? loc.country : `${loc.lat.toFixed(2)}, ${loc.lon.toFixed(2)}`;
-    els.updatedAt.textContent = `${t('updatedPrefix')} ${fmt12(data.current.time)}`;
-    els.tzNote.textContent = data.timezone ? `${data.timezone}` : '';
+    els.updatedAt.textContent = `Updated ${fmt12(data.current.time)}`;
+    els.tzNote.textContent = data.timezone ? `Times shown in ${data.timezone}` : '';
 
-    const sunsetHM = hm(data.daily.sunset[0]);
-    let scoreIdxs = dayIdxs.filter(i => { const {h} = hm(data.hourly.time[i]); return h >= hm(data.daily.sunrise[0]).h && h < sunsetHM.h && i >= nowIdx; });
+    // day score: average of remaining-daylight hours (weighted), fallback to full-day if day is over
+    const sunsetH = hm(data.daily.sunset[0]).h;
+    let scoreIdxs = dayIdxs.filter(i => {
+      const {h} = hm(data.hourly.time[i]);
+      return h >= hm(data.daily.sunrise[0]).h && h < sunsetH && i >= nowIdx;
+    });
     if(scoreIdxs.length === 0){
-      scoreIdxs = dayIdxs.filter(i => { const {h} = hm(data.hourly.time[i]); return h >= hm(data.daily.sunrise[0]).h && h < sunsetHM.h; });
+      scoreIdxs = dayIdxs.filter(i => {
+        const {h} = hm(data.hourly.time[i]);
+        return h >= hm(data.daily.sunrise[0]).h && h < sunsetH;
+      });
     }
     const hourly = data.hourly;
-    const hourScores = scoreIdxs.map(i => ({ i, s: hourDryScore({
-      precip_prob: hourly.precipitation_probability[i], precip: hourly.precipitation[i],
-      humidity: hourly.relative_humidity_2m[i], cloud: hourly.cloud_cover[i], wind: hourly.wind_speed_10m[i], isDay:true
-    })}));
-    const dayScore = hourScores.length ? Math.round(hourScores.reduce((a,b)=>a+b.s,0)/hourScores.length) : hourDryScore({
-      precip_prob: data.current.precipitation > 0 ? 80 : 20, precip: data.current.precipitation,
-      humidity: data.current.relative_humidity_2m, cloud: data.current.cloud_cover, wind: data.current.wind_speed_10m, isDay: !!data.current.is_day
+    const scores = scoreIdxs.map(i => hourDryScore({
+      precip_prob: hourly.precipitation_probability[i],
+      precip: hourly.precipitation[i],
+      humidity: hourly.relative_humidity_2m[i],
+      cloud: hourly.cloud_cover[i],
+      wind: hourly.wind_speed_10m[i],
+      isDay: true
+    }));
+    const dayScore = scores.length ? Math.round(scores.reduce((a,b)=>a+b,0)/scores.length) : hourDryScore({
+      precip_prob: data.current.precipitation > 0 ? 80 : 20,
+      precip: data.current.precipitation,
+      humidity: data.current.relative_humidity_2m,
+      cloud: data.current.cloud_cover,
+      wind: data.current.wind_speed_10m,
+      isDay: !!data.current.is_day
     });
 
     setScoreRing(dayScore);
-    els.scoreLabel.textContent = t('dryScoreLabel');
 
     const rainSoonFlag = scoreIdxs.some(i => hourly.precipitation_probability[i] >= 40);
     const todayDaily = {
@@ -967,105 +1156,119 @@
       temperature_2m_max: data.daily.temperature_2m_max,
       temperature_2m_min: data.daily.temperature_2m_min
     };
-    const v = verdictFor(dayScore, rainSoonFlag);
+    const v = verdictFor(dayScore, rainSoonFlag, todayDaily.uv_index_max);
     els.verdictHeadline.textContent = v.h;
     els.verdictBody.textContent = v.b;
 
-    if(hourScores.length){
-      const best = hourScores.reduce((a,b)=> b.s > a.s ? b : a, hourScores[0]);
-      els.bestTime.textContent = `${t('bestTimePrefix')} ${fmt12(data.hourly.time[best.i])}`;
-    } else { els.bestTime.textContent = ''; }
-
+    // sun position for ambient glow, rough mapping of current hour across daylight
     const nowH = hm(data.current.time).h + hm(data.current.time).m/60;
     const sr = hm(data.daily.sunrise[0]).h, ss = hm(data.daily.sunset[0]).h;
     const pct = Math.max(0, Math.min(100, ((nowH - sr) / (ss - sr)) * 100));
     els.heroSky.style.setProperty('--sun-x', pct + '%');
 
-    renderLegend();
     renderPegs(data, dayIdxs, nowIdx);
     renderFactors(data.current, todayDaily);
-    renderRiskMeters(data.current, todayDaily);
-    renderFabricPicker();
-    renderFabricResult(dayScore, sunsetHM, hm(data.current.time));
-    const { rainIdx, sunset } = buildAlerts(data, scoreIdxs.length ? dayIdxs : dayIdxs, nowIdx);
+    buildAlerts(data, scoreIdxs.length ? dayIdxs : dayIdxs, nowIdx);
     renderWarmCard(todayDaily);
-    renderWeek(buildWeek(data));
 
-    setupCountdown(data, rainIdx, sunset);
-    setupNotifications(data, rainIdx, sunset);
-
-    // static labels
-    els.brandTitle.innerHTML = t('brandTitle');
-    els.brandTag.textContent = t('brandTag');
-    els.cityInput.placeholder = t('searchPlaceholder');
-    els.searchBtnText.textContent = t('searchBtn');
-    els.geoBtn.textContent = t('geoBtn');
-    els.rightNowTitle.textContent = t('rightNowTitle');
-    els.riskTitleEl.textContent = t('riskTitle');
-    els.fabricTitleEl.textContent = t('fabricTitle');
-    els.weekTitleEl.textContent = t('weekTitle');
-    els.warningsTitleEl.textContent = t('warningsTitle');
-    els.wearTitleEl.textContent = t('wearTitle');
-    els.footerNote.innerHTML = t('footerNote');
-    els.remindersText.textContent = ('Notification' in window) && Notification.permission === 'granted' ? t('remindersOn') : t('remindersIntro');
-    els.remindersBtn.textContent = t('enableReminders');
-    if('Notification' in window && Notification.permission === 'granted'){
-      els.remindersBtn.setAttribute('aria-pressed','true'); els.remindersBtn.textContent = t('remindersOn');
+    // best remaining hour today — reuses the same scoreIdxs/scores as the hero score
+    // so the weekly "Today" card and the best-time note never disagree with the verdict above
+    let todayBest = null;
+    if (scores.length){
+      let maxI = 0;
+      for (let k = 1; k < scores.length; k++) if (scores[k] > scores[maxI]) maxI = k;
+      todayBest = { time: hourly.time[scoreIdxs[maxI]], s: scores[maxI] };
     }
+
+    renderWeekly(data, { score: dayScore, rainMax: todayDaily.precipitation_probability_max, best: todayBest });
+    renderBestTime(dayScore, todayBest, scoreIdxs.length > 0);
+    renderFabrics(dayScore);
+    els.fabricsNote.textContent = rainSoonFlag
+      ? 'Rain is expected soon — bring items in before then, even if not fully dry.'
+      : '';
+
+    const snapshot = buildSnapshot(data, dayScore, rainSoonFlag);
+    showChangeBanner(detectChanges(lastSnapshot, snapshot));
+    lastSnapshot = snapshot;
+
+    lastContext = buildChatContext(loc, data, dayScore, rainSoonFlag, todayBest, scoreIdxs.length > 0, todayDaily);
   }
 
   // ---------- events ----------
+  els.cbClose.addEventListener('click', ()=>{
+    els.changeBanner.style.display = 'none';
+  });
+
+  els.notifyBtn.addEventListener('click', async ()=>{
+    if(!('Notification' in window)){
+      alert("This browser doesn't support notifications — the in-page alert banner will still show whenever conditions change.");
+      return;
+    }
+    if(notifyEnabled){
+      notifyEnabled = false;
+      els.notifyBtn.classList.remove('active');
+      els.notifyBtn.textContent = '🔔 Enable alerts';
+      return;
+    }
+    let perm = Notification.permission;
+    if(perm === 'default') perm = await Notification.requestPermission();
+    if(perm === 'granted'){
+      notifyEnabled = true;
+      els.notifyBtn.classList.add('active');
+      els.notifyBtn.textContent = '🔔 Alerts on';
+    }else{
+      alert("Notifications are blocked in your browser settings. You can still leave this tab open — the in-page banner will show changes.");
+    }
+  });
+
+  // re-fetches quietly and re-renders in place, without the loading screen —
+  // used for background checks so an open tab can catch a change in the sky
+  async function refreshSilently(){
+    if(!currentLoc) return;
+    try{
+      const data = await fetchWeather(currentLoc.lat, currentLoc.lon);
+      render(currentLoc, data);
+    }catch(err){
+      // network hiccup during a background check — just try again next cycle
+    }
+  }
+
+  const REFRESH_MS = 10 * 60 * 1000; // ~10 minutes, matches the notify button's tooltip
+  setInterval(()=>{ if(!document.hidden) refreshSilently(); }, REFRESH_MS);
+  document.addEventListener('visibilitychange', ()=>{
+    if(!document.hidden) refreshSilently(); // catch up as soon as the tab regains focus
+  });
+
   els.searchForm.addEventListener('submit', async (e)=>{
     e.preventDefault();
     const q = els.cityInput.value.trim();
     if(!q) return;
-    els.loading.style.display = 'flex'; els.app.style.display = 'none';
-    try{ const loc = await geocode(q); await loadFor(loc); }
-    catch(err){ els.loading.style.display = 'none'; els.errorBox.innerHTML = `<div class="error-box">${err.message}</div>`; }
+    els.loading.style.display = 'flex';
+    els.app.style.display = 'none';
+    try{
+      const loc = await geocode(q);
+      await loadFor(loc);
+    }catch(err){
+      els.loading.style.display = 'none';
+      els.errorBox.innerHTML = `<div class="error-box">${err.message}</div>`;
+    }
   });
 
   els.geoBtn.addEventListener('click', ()=>{
-    if(!navigator.geolocation){ loadFor(DEFAULT_LOC); return; }
-    els.loading.style.display = 'flex'; els.app.style.display = 'none';
+    if(!navigator.geolocation){
+      loadFor(DEFAULT_LOC);
+      return;
+    }
+    els.loading.style.display = 'flex';
+    els.app.style.display = 'none';
     navigator.geolocation.getCurrentPosition(
-      (pos)=>{ loadFor({ lat: pos.coords.latitude, lon: pos.coords.longitude, name: lang==='ny' ? 'Malo anu' : 'Your location', country:'' }); },
+      (pos)=>{
+        loadFor({ lat: pos.coords.latitude, lon: pos.coords.longitude, name:'Your location', country:'' });
+      },
       ()=>{ loadFor(DEFAULT_LOC); },
       { timeout: 6000 }
     );
   });
-
-  els.remindersBtn.addEventListener('click', async ()=>{
-    if(!('Notification' in window)){
-      els.remindersText.textContent = t('remindersDenied');
-      return;
-    }
-    if(Notification.permission === 'default'){
-      const perm = await Notification.requestPermission();
-      if(perm === 'granted'){
-        els.remindersBtn.setAttribute('aria-pressed','true'); els.remindersBtn.textContent = t('remindersOn'); els.remindersText.textContent = t('remindersOn');
-        if(state.data) renderAll();
-      } else {
-        els.remindersText.textContent = t('remindersDenied');
-      }
-    } else if(Notification.permission === 'granted'){
-      els.remindersBtn.textContent = t('remindersOn'); els.remindersText.textContent = t('remindersOn');
-    } else {
-      els.remindersText.textContent = t('remindersDenied');
-    }
-  });
-
-  function setLang(newLang){
-    lang = newLang;
-    els.langEn.classList.toggle('active', lang==='en');
-    els.langNy.classList.toggle('active', lang==='ny');
-    document.documentElement.lang = lang === 'ny' ? 'ny' : 'en';
-    els.loadingText.textContent = t('loading');
-    if(state.data) renderAll();
-  }
-  els.langEn.addEventListener('click', ()=> setLang('en'));
-  els.langNy.addEventListener('click', ()=> setLang('ny'));
-
-  window.addEventListener('online', ()=>{ clearOfflineBanner(); if(state.loc) loadFor(state.loc); });
 
   // initial load
   loadFor(DEFAULT_LOC);

@@ -1007,7 +1007,7 @@
     els.warningsTitleEl.textContent = t('warningsTitle');
     els.wearTitleEl.textContent = t('wearTitle');
     els.footerNote.innerHTML = t('footerNote');
-    els.remindersText.textContent = Notification && Notification.permission === 'granted' ? t('remindersOn') : t('remindersIntro');
+    els.remindersText.textContent = ('Notification' in window) && Notification.permission === 'granted' ? t('remindersOn') : t('remindersIntro');
     els.remindersBtn.textContent = t('enableReminders');
     if('Notification' in window && Notification.permission === 'granted'){
       els.remindersBtn.setAttribute('aria-pressed','true'); els.remindersBtn.textContent = t('remindersOn');
